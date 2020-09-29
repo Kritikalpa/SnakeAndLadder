@@ -10,6 +10,7 @@ namespace SnakeAndLadder
             const int SNAKE = 2;
 
             int playerPosition = 0;
+            int counter = 0;
 
             Random random = new Random();
 
@@ -42,10 +43,10 @@ namespace SnakeAndLadder
 
                 }
 
-
+                counter++;
                 Console.WriteLine("Player is at : " + playerPosition);
             }
-            
+            Console.WriteLine("Number of times dice was rolled : " + counter);
         }
     }
 }
