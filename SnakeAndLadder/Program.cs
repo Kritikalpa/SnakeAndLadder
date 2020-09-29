@@ -12,31 +12,38 @@ namespace SnakeAndLadder
             int playerPosition = 0;
 
             Random random = new Random();
-            int dice = random.Next(1, 7);
-            int movement = random.Next(0, 3);
 
-            Console.WriteLine("Number on the dice : " + dice);
-
-            switch (movement)
+            while(playerPosition < 100)
             {
-                case LADDER:
-                    Console.WriteLine("Player climbs the ladder");
-                    playerPosition += dice;
-                    break;
+                int dice = random.Next(1, 7);
+                int movement = random.Next(0, 3);
 
-                case SNAKE:
-                    Console.WriteLine("Player slides down the snake");
-                    playerPosition -= dice;
-                    break;
+                Console.WriteLine("Number on the dice : " + dice);
 
-                default:
-                    Console.WriteLine("No-Play by the player");
-                    break;
+                switch (movement)
+                {
+                    case LADDER:
+                        Console.WriteLine("Player climbs the ladder");
+                        playerPosition += dice;
+                        break;
 
+                    case SNAKE:
+                        Console.WriteLine("Player slides down the snake");
+                        playerPosition -= dice;
+                        if (playerPosition < 0)
+                            playerPosition = 0;
+                        break;
+
+                    default:
+                        Console.WriteLine("No-Play by the player");
+                        break;
+
+                }
+
+
+                Console.WriteLine("Player is at : " + playerPosition);
             }
-
-
-            Console.WriteLine("Player is at : " + playerPosition);
+            
         }
     }
 }
