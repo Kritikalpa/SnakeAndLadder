@@ -23,6 +23,8 @@ namespace SnakeAndLadder
                 counter++;
             }
             Console.WriteLine("Number of times dice was rolled : " + counter);
+
+            Console.WriteLine(player1.playerPosition == 100 ? "Player 1 Won" : "Player 2 Won");
         }
     }
 }
